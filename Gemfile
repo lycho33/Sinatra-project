@@ -18,3 +18,5 @@ gem "tux", "~> 0.3.0"
 gem "rake", "~> 13.0"
 gem "thin", "~> 1.8"
 gem "dotenv", "~> 2.7"
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

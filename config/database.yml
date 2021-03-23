@@ -3,3 +3,5 @@ default: &default
   database: 'db/development.sqlite'
 development:
   <<: *default
+  timeout: 50000
+  pool: 5
