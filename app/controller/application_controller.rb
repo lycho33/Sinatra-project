@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/' do
-        erb :home
+        erb :index
     end
 
     helpers do
@@ -24,11 +24,7 @@ class ApplicationController < Sinatra::Base
         end
 
         def redirect_if_logged_in
-            redirect "/movie" if logged_in?
+            redirect "/home" if logged_in?
         end
     end
-    #READ all lessons: get '/lessons' do @lessons = Lesson.all erb:'lessons/index'
-    #READ 1 LESSON
-    #CREATE new lesson (render form)
-    #CREATE new lesson (save in db)
 end

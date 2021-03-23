@@ -1,4 +1,5 @@
 ENV['SINATRA_ENV'] ||= "development"
+require 'dotenv/load'
 require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 ActiveRecord::Base.establish_connection(
@@ -8,3 +9,4 @@ ActiveRecord::Base.establish_connection(
 # require './app/controllers/application_controller'
 require_all 'app'
 require 'faker'
+
