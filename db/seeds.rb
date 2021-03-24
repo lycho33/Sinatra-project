@@ -4,13 +4,12 @@ puts "add edudcation data in DB:Seed"
 
 User.create(username: 'hello', password: 'hello')
 
-Movie.create(
-    title: 
-    year:
-    description:
-    director_id:
-)
+# Lesson.create(
+#     title:
+#     lesson_num:
+#     content:
+# )
 
-3.times do 
-    User.last.delete
-end
+# 3.times do 
+#     User.last.delete
+# end

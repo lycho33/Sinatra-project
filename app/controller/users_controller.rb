@@ -1,11 +1,11 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
     get '/signup' do
         erb :"users/new"
     end
 
     post '/signup' do
         redirect_if_logged_in
-        user = User.new(username: params[:username], email: params[:email], password: params[:password])
+        user = User.new(params[:user])
         if user.save
             session["user_id"] = user.id
             redirect "/home"
@@ -35,7 +35,7 @@ class UserController < ApplicationController
     end
 
     get '/home' do
-        @user = User.all
+        @user = current_user
         erb :'/users/home'
     end
 end

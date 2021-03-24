@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /root/Development/Phase_2/Sinatra-project/app/controller/user_controller.rb:9 self.POST /signup:
+
+     [1;34m4[0m:     [32mend[0m
+     [1;34m5[0m: 
+     [1;34m6[0m:     post [31m[1;31m'[0m[31m/signup[1;31m'[0m[31m[0m [32mdo[0m
+     [1;34m7[0m:         redirect_if_logged_in
+     [1;34m8[0m:         user = [1;34;4mUser[0m.new([35musername[0m: params[[33m:username[0m], [35memail[0m: params[[33m:email[0m], [35mpassword[0m: params[[33m:password[0m])
+ =>  [1;34m9[0m:         binding.pry
+    [1;34m10[0m:         [32mif[0m user.save
+    [1;34m11[0m:             session[[31m[1;31m"[0m[31muser_id[1;31m"[0m[31m[0m] = user.id
+    [1;34m12[0m:             redirect [31m[1;31m"[0m[31m/home[1;31m"[0m[31m[0m
+    [1;34m13[0m:         [32melse[0m
+    [1;34m14[0m:             redirect [31m[1;31m"[0m[31m/signup[1;31m"[0m[31m[0m
+

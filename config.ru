@@ -2,6 +2,6 @@ require "./config/environment"
 
 # use Rack::MethodOverride
 
-use UserController 
-use TopicController
+use UsersController 
+use LessonsController
 run ApplicationController
