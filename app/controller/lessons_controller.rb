@@ -9,6 +9,17 @@ class LessonsController < ApplicationController
         erb :'lessons/new'
     end
 
+    #Create new lesson (save in db)
+    post '/new' do
+        redirect_if_not_logged_in
+        lesson = Lesson.new(title: params["lessons"]["title"], content: params["lessons"]["content"], user_id: current_user.id)
+        if lesson.save
+            redirect "/lessons/#{lesson.id}"
+        else
+            redirect '/lessons'
+        end
+    end
+
     #Read 1 lesson
     get '/lessons/:id' do
         redirect_if_not_logged_in
@@ -16,15 +27,8 @@ class LessonsController < ApplicationController
         erb :'lessons/show'
     end
 
-    #Create new lesson (save in db)
-    post '/new' do
-        redirect_if_not_logged_in
-        lesson = current_user.lessons.build(params[:lesson])
-        lesson.save
-            redirect "/lessons/#{lesson.id}"
-    end
 
-    def redirect_if_not_authorized       
+    def redirect_if_not_authorized     
         @lesson = Lesson.find_by_id(params[:id])    
         if @lesson.user_id != session[:user_id]            
             redirect "/lessons"        
@@ -42,9 +46,16 @@ class LessonsController < ApplicationController
         redirect_if_not_logged_in
         redirect_if_not_authorized
         if @lesson.update(params["lesson"])
-            redirect "/movies/#{@lesson.id}"
+            redirect "/lessons/#{@lesson.id}"
         else
-            redirect "/movies/#{@lesson.id}/edit"
+            redirect "/lessons/#{@lesson.id}/edit"
         end
+    end
+
+    delete "/lessons/:id" do
+        redirect_if_not_logged_in
+        redirect_if_not_authorized
+        @lesson.destroy
+        redirect "/lessons"
     end
 end
