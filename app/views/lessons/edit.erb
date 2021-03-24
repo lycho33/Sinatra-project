@@ -1,0 +1,9 @@
+<form action="/lessons/<%= @lessons.id %>" method="POST">
+    <input type="hidden" name="_method" value="patch">
+    <input type="text" name="movie[title]" value="<%= @movie.title %>"><br>
+    <input type="text" name="movie[year]" value="<%= @movie.year %>"><br>
+    <textarea name="movie[description]"><%= @movie.description %></textarea><br>
+    <input type="text" name="movie[fresh]" value="<%= @movie.fresh %>"><br>
+    <input type="text" name="movie[rating]" value="<%= @movie.rating %>"><br>
+    <input type="submit" value="Update Lesson">
+</form>

@@ -1,14 +1,11 @@
 require 'faker'
 
-puts "add edudcation data in DB:Seed"
+User.create(username: 'hello', email: 'hello@gmail.com', password: 'hello')
 
-User.create(username: 'hello', password: 'hello')
-
-# Lesson.create(
-#     title:
-#     lesson_num:
-#     content:
-# )
+Lesson.create(
+    title: 'Speaking',
+    content: 'Learning to converse in colloquial English'
+)
 
 # 3.times do 
 #     User.last.delete

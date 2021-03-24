@@ -1,3 +1,12 @@
-
 <h1>All lessons</h1>
+
+<ul>
+<% @lessons.each do |l| %>
+    <label for="title">Lesson Title</label>
+    <li>Lesson Title: <%= l.title %></li>
+    <li>Lesson Content: <%= l.content %></li>
+<% end %>
+</ul>
+
+<p><a href="/lessons/new">Create a lesson</p>
 

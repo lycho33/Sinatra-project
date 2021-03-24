@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
     post '/signup' do
         redirect_if_logged_in
-        user = User.new(params[:user])
+        user = User.new(params[:user]) 
         if user.save
             session["user_id"] = user.id
             redirect "/home"
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         redirect_if_logged_in
         user = User.find_by(username: params["user"]["username"])
         if user && user.authenticate(params["user"]["password"])
-            session["user_id"] = user.id
+            session[:user_id] = user.id
             redirect "/home"
         else
             redirect "/login"
