@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_191038) do
     t.string "title"
     t.integer "user_id"
     t.text "content"
+    t.text "topic"
   end
 
   create_table "users", force: :cascade do |t|

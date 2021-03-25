@@ -4,6 +4,7 @@ class CreateLessons < ActiveRecord::Migration[6.1]
       t.string :title
       t.integer :user_id
       t.text :content
+      t.text :topic
     end
   end
 end

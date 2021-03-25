@@ -1,4 +1,4 @@
-<form action="/lessons/<%= @lessons.id %>" method="POST">
+<form action="/lessons/<%= @lesson.id %>" method="POST">
     <input type="hidden" name="_method" value="patch">
     <input type="text" name="lesson[title]" value="<%= @lesson.title %>"><br>
     <textarea name="lesson[content]"><%= @lesson.content %></textarea><br>

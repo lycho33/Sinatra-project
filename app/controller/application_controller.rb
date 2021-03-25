@@ -4,10 +4,16 @@ class ApplicationController < Sinatra::Base
         set :public_folder, 'public'
         enable :sessions
         set :session_secret, ENV['SESSION_SECRET']
+        use Rack::Flash, :sweep => true 
     end
 
     get '/' do
-        erb :index
+        erb :search
+    end
+
+    get '/search' do
+        @lesson = Lesson.find_by(title: params["title"])
+        erb :results
     end
 
     helpers do

@@ -1,9 +1,13 @@
 <h2><%= @lesson.title %></h2>
 <h3><%= @lesson.content %></h3>
 
+
+
+<p><a href="/lessons/<%= @lesson.id %>/edit">Edit a lesson</p>
+
 <form action="/lessons/<%= @lesson.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Lesson">
 </form><br>
-<p><a href="/lessons/:id/edit">Edit a lesson</p>
+
 <p><a href="/lessons">See Your Profile</p>
