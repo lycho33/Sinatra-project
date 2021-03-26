@@ -1,6 +1,15 @@
-<form action="/lessons/<%= @lesson.id %>" method="POST">
+<form action="/lessons/<%= @lesson.id %>" method="POST" class="px-4 py-3">
     <input type="hidden" name="_method" value="patch">
-    <input type="text" name="lesson[title]" value="<%= @lesson.title %>"><br>
-    <textarea name="lesson[content]"><%= @lesson.content %></textarea><br>
-    <input type="submit" value="Update Lesson">
-</form>
+    <div class="mb-3">
+      <label for="title" class="form-label">Lesson Title</label><br>
+        <input type="text" name="lessons[title]" value="<%= @lesson.title %>">
+    </div>
+    <div class="mb-3">
+      <label for="topic" class="form-label">Topic</label><br>
+        <input type="text" name="lessons[topic]" value="<%= @lesson.topic %>">
+    </div>
+     <label for="content" class="form-label">Topic</label><br>
+        <textarea name="lesson[content]"><%= @lesson.content %></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Lesson</button>
+  </form>

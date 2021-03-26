@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
     get '/lessons' do
         redirect_if_not_logged_in
-        @lessons = Lesson.all #current_user.lessons 
+        @lessons = current_user.lessons 
         erb :'/lessons/index'
     end
 
