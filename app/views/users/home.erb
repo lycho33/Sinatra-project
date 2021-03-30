@@ -1,4 +1,12 @@
-<h1>Welcome to Your Profile <%= current_user.username %></h1>
-
-<p><a href="/lessons">Here are a list of Lessons</p>
-<p><a href="/lessons/new">Add a lesson</p>
+<div class="profile-page" 
+    style="margin: 0 auto;
+    width: 1000px;
+    padding: 20px;">
+    <h1 style="padding-top: 50px; text-align: center; font-family: 'Patrick Hand', cursive; font-size: 80px;">Welcome to Your Profile <%= current_user.username.capitalize %></h1>
+    <div style="padding-top: 30px; padding-left: 50px;">
+        <ul class="list-group" >
+            <a href="/lessons" style="text-decoration: none;"><li class="list-group-item">Here are a list of Lessons</li>
+            <a href="/lessons/new" style="text-decoration: none;"><li class="list-group-item">Add a lesson</li>
+        </ul>
+    </div>
+</div>

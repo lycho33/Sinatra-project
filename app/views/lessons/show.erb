@@ -1,13 +1,28 @@
-<h2><%= @lesson.title %></h2>
-<h3><%= @lesson.content %></h3>
+<div style="text-align: center; 
+    max-width: 100%; 
+    margin: auto; 
+    background-image: url('/images/brick.jpg');
+    padding-top: 20px;">
+    <div style="font-family: 'Patrick Hand', cursive;">
+        <h3>Title: <%= @lesson.title %></h2>
+        <h3>Topic: <%= @lesson.topic %></h3>
+        <h3>Content: <%= @lesson.content %></h3>
+    </div>
 
+    <div class='lesson-buttons' style='display: block; margin-left: auto; margin-right: auto; width: 8%; padding-top: 10px; padding-bottom: 10px;'>
 
+        <div class="alert alert-danger" role="alert" style="width: 150px; height: 55px; text-align: center;">
+            <a href="/lessons/<%= @lesson.id %>/edit" class="alert-link">Edit a lesson</a>
+        </div>
+        <div class="alert alert-warning" role="alert" style="width: 150px; height: 60px; text-align: center;">
+        <form action="/lessons/<%= @lesson.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete Lesson">
+        </form><br>
+        </div>
+        <div class="alert alert-info" role="alert" style="width: 150px; height: 55px; text-align: center;">
+            <a href="/lessons">See Your Profile</p>
+        </div>
 
-<p><a href="/lessons/<%= @lesson.id %>/edit">Edit a lesson</p>
-
-<form action="/lessons/<%= @lesson.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Lesson">
-</form><br>
-
-<p><a href="/lessons">See Your Profile</p>
+    </div>
+</div>

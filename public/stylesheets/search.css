@@ -1,12 +1,16 @@
-.container-fluid-search{
+.greeting {
     background-image: url('/images/lego art.jpg');
     background-position: center;
-    height: 800px;
-    background-repeat: : no-repeat;
+    height: 52em;
+    background-repeat: no-repeat;
     background-size: cover;
+    z-index: -1;
 }
 
-h2 {
-    background-color: blue;
-    
+h1 {
+    color: white;
 }
+
+@viewport {
+    width: 100vw; /*Sets the width of the actual viewport to the device width*/
+  }

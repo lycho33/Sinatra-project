@@ -11,14 +11,15 @@ class LessonsController < ApplicationController
     end
 
     #Create new lesson (save in db)
-    post '/lessons' do
+    post '/lessons/new' do
         redirect_if_not_logged_in
-        lesson = Lesson.new(title: params["lessons"]["title"], content: params["lessons"]["content"], user_id: current_user.id)
+        # lesson = current_user.lessons.build(params[:lessons])
+        lesson = Lesson.new(title: params["lessons"]["title"], topic: params["lessons"]["topic"], content: params["lessons"]["content"], user_id: current_user.id)
         if lesson.save
-            redirect "/lessons/#{lesson.id}"
+            redirect "/lessons"
         else
             flash[:error] = "#{lesson.errors.full_messages.join(", ")}"
-            redirect '/lessons'
+            redirect '/lessons/new'
         end
     end
 
@@ -39,7 +40,8 @@ class LessonsController < ApplicationController
     patch '/lessons/:id' do
         redirect_if_not_logged_in
         redirect_if_not_authorized
-        if @lesson.update(params[:lesson])
+        @lesson = Lesson.find_by_id(params[:id])  
+        if @lesson.update(params[:lessons])
             redirect "/lessons/#{@lesson.id}"
         else
             redirect "/lessons/#{@lesson.id}/edit"

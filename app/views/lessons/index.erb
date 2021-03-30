@@ -1,20 +1,19 @@
-<h1>All lessons</h1>
+<div class="all-lessons-page"
+style="margin: 0 auto;
+width: 1000px;
+padding: 20px;">
+    <h1 style="text-align: center; font-family: 'Patrick Hand', cursive;">All lessons</h1><br>
 
-<!--
-<ul>
-<% @lessons.each do |l| %>
-    <label for="title">Lesson Title</label>
-    <li>Lesson Title: <%= l.title %></li>
-    <li>Lesson Content: <%= l.content %></li>
-<% end %>
-</ul> -->
+<div class="list-group">
+    <h6>**Click on the title to edit further</h3> 
+    <% @lessons.each do |lesson| %>
+        <a href="/lessons/<%= lesson.id %>" class="list-group-item list-group-item-action active" aria-current="true">
+            Lesson Title: <%= lesson.title %></a>
+        <a href="#" class="list-group-item list-group-item-action">Lesson Topic: <%= lesson.topic %></a>
+        <a href="#" class="list-group-item list-group-item-action">Lesson Content: <%= lesson.content %></a>
+    <% end %><br>
 
-<h3>Click on the title to edit further</h3> 
-<% @lessons.each do |lesson| %>
-    <a href='/lessons/<%= lesson.id %>'><li>Lesson Title: <%= lesson.title %></li></a><!-- this link needs to be fixed!-->
-    <li>Lesson Topic: <%= lesson.topic %></li>
-    <li>Lesson Content: <%= lesson.content %></li>
-<% end %>
-
-<p><a href="/lessons/new">Create a lesson</p>
+    <button type="button" class="btn btn-warning">
+        <a href="/lessons/new" style="text-decoration: none; color: black;">Create a lesson</button><br>
+</div>
 

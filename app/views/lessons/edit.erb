@@ -1,15 +1,18 @@
 <form action="/lessons/<%= @lesson.id %>" method="POST" class="px-4 py-3">
     <input type="hidden" name="_method" value="patch">
-    <div class="mb-3">
-      <label for="title" class="form-label">Lesson Title</label><br>
-        <input type="text" name="lessons[title]" value="<%= @lesson.title %>">
-    </div>
-    <div class="mb-3">
-      <label for="topic" class="form-label">Topic</label><br>
-        <input type="text" name="lessons[topic]" value="<%= @lesson.topic %>">
-    </div>
-     <label for="content" class="form-label">Topic</label><br>
-        <textarea name="lesson[content]"><%= @lesson.content %></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Update Lesson</button>
-  </form>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" name="lessons[title]" value="<%= @lesson.title %>">
+  <label for="floatingInput">Lesson Title</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" name="lessons[topic]" value="<%= @lesson.topic %>">
+  <label for="floatingInput">Topic</label>
+</div>
+<div class="form-floating">
+  <input type="text" class="form-control" name="lessons[content]" value="<%= @lesson.content %>">
+  <label for="content" class="form-label">Content</label>
+</div>
+<div style="padding-top: 20px; padding-bottom: 10px;">
+  <button type="submit" class="btn btn-primary">Update Lesson</button>
+</div>
+</form>
