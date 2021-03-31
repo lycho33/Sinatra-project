@@ -4,16 +4,19 @@ width: 1000px;
 padding: 20px;">
     <h1 style="text-align: center; font-family: 'Patrick Hand', cursive;">All lessons</h1><br>
 
-<div class="list-group">
+<div class="list-group" style="padding-bottom: 20px;">
     <h6>**Click on the title to edit further</h3> 
     <% @lessons.each do |lesson| %>
         <a href="/lessons/<%= lesson.id %>" class="list-group-item list-group-item-action active" aria-current="true">
-            Lesson Title: <%= lesson.title %></a>
+            Lesson Title: <%= lesson.title %>
+            <svg id="i-edit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z" />
+            </svg></a>
         <a href="#" class="list-group-item list-group-item-action">Lesson Topic: <%= lesson.topic %></a>
         <a href="#" class="list-group-item list-group-item-action">Lesson Content: <%= lesson.content %></a>
     <% end %><br>
 
-    <button type="button" class="btn btn-warning">
-        <a href="/lessons/new" style="text-decoration: none; color: black;">Create a lesson</button><br>
+    <a href="/lessons/new" style="text-decoration: none; color: black;"><button type="button" class="btn btn-warning">
+        Create a lesson</button><br>
 </div>
 

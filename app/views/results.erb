@@ -1,3 +1,30 @@
-<p>Title: <%= @lesson.title %></p>
-<p>Topic: <%= @lesson.topic %></p>
-<p>Content: <%= @lesson.content %></p>
+<div class="container">
+  <div class="row" style="padding-top: 150px; padding-right: 50px;">
+    <div class="col order-last">
+      <img src="/images/jumping results.gif" alt="Jumping">
+    </div>
+<div class="col">
+    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+    <div class="card-header">Title</div>
+    <div class="card-body">
+        <h5 class="card-title"><%= @lesson.title %></h5>
+    </div>
+    </div>
+    <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
+    <div class="card-header">Topic</div>
+    <div class="card-body">
+        <h5 class="card-title"><%= @lesson.topic %></h5>
+    </div>
+    </div>
+        <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">Content</div>
+        <div class="card-body">
+            <h5 class="card-title"><%= @lesson.content %></h5>
+        </div>
+        </div>
+</div>
+<div class="col order-first">
+      <img src="/images/results.gif" alt="Girl with Sword">
+    </div>
+  </div>
+</div>
