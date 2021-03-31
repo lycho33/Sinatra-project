@@ -1,34 +1,39 @@
 # Sinatra-project
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/test`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome! This is an app that will allow you to build lessons based on what you've learnt. The goal is to design a lesson that you would teach yourself or others. As you continue to learn more, feel free to create the lessons to solidify your knowledge!
 
-TODO: Delete this and the text above, and describe your gem
+## Fork and Clone this Repo
 
-## Installation
+1. Go to this Github website
 
-Add this line to your application's Gemfile:
+    https://github.com/lycho33/Sinatra-project
 
+2. Create a Github account. If you already have one, fork this repo
+3. Copy the SSH: git@github.com:lycho33/Sinatra-project.git
+4. Enter into your terminal and go to the directory and file you would like to save this repo
 ```ruby
-gem 'test'
+    mkdir (make directory)
+    cd (change directories to go to the right directory - file)
 ```
-
-And then execute:
+5. Clone this repo
+``` ruby
+    git clone [SSH]
+```
+6. Code the repo so it shows up in your VS Code
+```ruby
+    code Sinatra-project
+```
+And then execute in your terminal:
 
     $ bundle install
 
-Or install it yourself as:
-
-    $ gem install test
-
 ## Usage
 
-TODO: Write usage instructions here
+To view how this app works, please view this video below. 
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
